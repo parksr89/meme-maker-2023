@@ -140,9 +140,13 @@ function textStamp(event){
     if(text !==""){
         ctx.save();
         ctx.lineWidth = 1; 
-             
+
         ctx.font = `${fontSize}px serif`;  
-        
+        /* rotate */
+        ctx.translate(event.offsetX, event.offsetY);
+        ctx.rotate(-(90/180)*Math.PI);
+        ctx.translate(-event.offsetX, -event.offsetY);
+
         if (isTextTransfroming){
             ctx.fillText(text,event.offsetX,event.offsetY);
         }else{        
