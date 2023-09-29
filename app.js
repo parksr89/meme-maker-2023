@@ -139,16 +139,21 @@ function textStamp(event){
     const text = textInput.value;  
     if(text !==""){
         ctx.save();
-        ctx.lineWidth = 1; 
-             
+        ctx.lineWidth = 1;              
         ctx.font = `${fontSize}px serif`;  
-        
+        // rotate textStamp
+        ctx.translate(event.offsetX, event.offsetY);
+        ctx.rotate(360*Math.PI/(-180));
+        ctx.translate(-event.offsetX, -event.offsetY);
+
         if (isTextTransfroming){
-            ctx.fillText(text,event.offsetX,event.offsetY);
+            ctx.fillText(text,event.offsetX,event.offsetY);               
+                 
         }else{        
             ctx.strokeText(text,event.offsetX,event.offsetY);
+            
         }
-        console.log(event.offsetX,event.offsetY);
+
         ctx.restore();
     }
 }
