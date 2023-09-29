@@ -142,6 +142,7 @@ function textStamp(event){
         ctx.lineWidth = 1; 
 
         ctx.font = `${fontSize}px serif`;  
+        
         /* rotate */
         ctx.translate(event.offsetX, event.offsetY);
         ctx.rotate(-(90/180)*Math.PI);

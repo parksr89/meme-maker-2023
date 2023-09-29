@@ -78,8 +78,13 @@ button,
 #text-preview{     
     background-color:white; 
     height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-.btns div label{
+
+#Line-Width-mark{
     padding:10px 15px;
     background-color:blueviolet;
 }
