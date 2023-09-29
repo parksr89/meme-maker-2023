@@ -17,19 +17,15 @@ const textModeBtn = document.querySelector("#text-mode-btn");
 const fontSizeInput = document.querySelector("#font-size-input");
 const textRotate = document.getElementById("text-rotate");
 
-let textPreview = document.querySelector("#text-preview");
-
 const CANVAS_WIDTH = 800;
 const CANVAS_HEIGHT = 800;
-
-
 
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
 ctx.lineWidth = lineWidth.value;
 ctx.lineCap = "round";
 
-
+let textPreview = document.querySelector("#text-preview");
 let isTextTransfroming =false;
 let isPainting = false;
 let isFilling = false;
@@ -91,7 +87,7 @@ function onColorChange(event){
 }
 
 function onColorClick(event){
-    const colorValue = event.target.dataset.color;
+    const colorValue = event.target.dataset.color;    
     strokeStyleAndfillStyle(colorValue);
     color.value = colorValue;
     elseColor.style.backgroundColor = color.value;    
@@ -178,6 +174,12 @@ function preview(event , degree){
     textPreview.style.transform="rotate(" +(-degree) + "deg)";    
     textPreview.style.font=`${fontSize}px serif`;  
     textPreview.style.color= elseColor.style.backgroundColor;
+
+    if (isTextTransfroming === false){
+        textPreview.classList.add("text-stroke");        
+    }else{
+        textPreview.classList.remove("text-stroke");
+    }
     
 }
 
