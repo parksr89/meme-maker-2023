@@ -139,7 +139,7 @@ function textStamp(event){
     if(text !==""){
         ctx.save();
         ctx.lineWidth = 1; 
-        /* ctx.rotate((1 * Math.PI) / 180);  */            
+             
         ctx.font = `${fontSize}px serif`;  
         
         if (isTextTransfroming){
