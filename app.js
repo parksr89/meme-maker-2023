@@ -17,6 +17,7 @@ const textModeBtn = document.querySelector("#text-mode-btn");
 const fontSizeInput = document.querySelector("#font-size-input");
 const textRotate = document.getElementById("text-rotate");
 
+let textPreview = document.querySelector("#text-preview");
 
 const CANVAS_WIDTH = 800;
 const CANVAS_HEIGHT = 800;
@@ -142,13 +143,13 @@ function fontSizeChange(event){
 }
 
 function textStamp(event){
-    const text = textInput.value;  
+    const text = textInput.value; 
+    
     if(text !==""){
         ctx.save();
-        ctx.lineWidth = 1; 
-
-        ctx.font = `${fontSize}px serif`;  
-
+        ctx.lineWidth = 1;         
+        ctx.font = `${fontSize}px serif`; 
+        
         /* rotate */
         ctx.translate(event.offsetX, event.offsetY);
         ctx.rotate(-(Angle/180)*Math.PI);
@@ -159,6 +160,7 @@ function textStamp(event){
         }else{        
             ctx.strokeText(text,event.offsetX,event.offsetY);
         }
+                      
         ctx.restore();
     }
 }
@@ -167,8 +169,18 @@ function onTextRotate(event){
 
     if (Angle !== event.target.value){
         Angle = event.target.value;
-    }
+    }   
+    preview(textInput.value, Angle);
 }
+
+function preview(event , degree){    
+    textPreview.innerText = event;
+    textPreview.style.transform="rotate(" +(-degree) + "deg)";    
+    textPreview.style.font=`${fontSize}px serif`;  
+    textPreview.style.color= elseColor.style.backgroundColor;
+    
+}
+
 
 function ontextModeClick(){
     
