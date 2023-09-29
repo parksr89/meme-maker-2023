@@ -33,9 +33,10 @@ body {
 .color-options {
     display: flex;
     flex-direction: column;
-    gap:20px;
     align-items: center;
+    gap: 20px;
 }
+.color-options label,
 .color-option {
     width:50px;
     height: 50px;
@@ -44,17 +45,23 @@ body {
     border:2px solid white;
     transition:transform ease-in-out .1s;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
 
+.color-option:hover {    
+    transform: scale(1.2) ;
 }
-.color-option:hover {
-    transform: scale(1.2);
+
+#else-color{
+    transform: scale(1.2) ;
 }
+
 input#color {
     background-color: white;
+    display: none;
 }
 
 button,
-label {
+.btns label {
     all:unset;
     padding:10px 0px;
     text-align: center;
@@ -83,4 +90,76 @@ input#text {
     text-align: center;
     background-color:white;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.color-options label {
+    margin-bottom: 30px;
+}
+
+#line-width-text{
+    all:unset;
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-around;
+    align-items: center;
+}
+ 
+#line-width-text button {
+    display: block;    
+    padding:10px 10px;
+    text-align: center;
+    background-color:royalblue;    
+    color:white;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: opacity linear .1s;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+#line-width-display{ 
+    height:18px;
+    width: 20px;
+    padding:10px 15px;    
+    border-radius: 10px;
+    font-weight: 500;
+    color:royalblue ;
+    text-align: center;
+    background-color:white;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+
+#Line-Width-mark{
+    display: block;    
+    padding:10px 10px;
+    text-align: center;
+    background-color:blueviolet;
+    color:white;
+    font-weight: 500;    
+    border-radius: 10px;
+    transition: opacity linear .1s;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+}
+.btns span{
+    padding-left: 5px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btns span input{
+    display: block;
+    width: 40px;
+    height: 37px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    text-align: center;
+    background-color:white;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.btns span button{    
+    display: block;
+    width:140px;
 }

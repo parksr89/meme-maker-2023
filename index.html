@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="color-options">
+        <label for="color" id="else-color"></label>
         <input type="color" id="color" />
         <div class="color-option" style="background-color: #1abc9c" data-color="#1abc9c"></div>
         <div class="color-option" style="background-color: #2ecc71" data-color="#2ecc71"></div>
@@ -21,15 +22,25 @@
     </div>
     <canvas></canvas>
     <div class="btns">
+        <span>
+            <input type="text" id="font-size-input" placeholder="size" maxlength="3"/>
+            <button id ="text-mode-btn">Stroke Text</button>
+        </span>     
+        
+        <input type="text" id="text" placeholder="Add text here..." />
+        <div id="Line-Width-mark">🔽 Line-Width 🔽</div>
+        <label for="line-width" id="line-width-text">
+            <div id="line-width-display"></div>
+            <button id="line-width-thinbtn">Thin</button>
+            <button id="line-width-boldbtn">Bold</button>
+        </label>
         <input type="range" id="line-width" min="1" max="20" value="10"  step="0.5" />
         <button id ="mode-btn">🩸 Fill</button>
         <button id ="desstroy-btn">💣 Desstroy</button>
-        <button id ="eraser-btn">❌ Erase</button>
-
+        <button id="eraser-btn">❌ Erase</button>
         <label for ="file">💅🏻 Add Photo</label>
-        <input type="file" accept="image/*" id="file" />    
-
-        <input type="text" id="text" placeholder="Add text here..." />
+        <input type="file" accept="image/*" id="file" />
+        
         <button id="save">🖼 Save iamge</button>
     </div>
     <script src="app.js"></script>
