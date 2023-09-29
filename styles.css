@@ -84,6 +84,26 @@ button,
     text-align: center;
 }
 
+#text-rotate-label{
+    all:unset;
+    padding:10px 0px;
+    text-align: center;
+    background-color:blueviolet;
+    color:white;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: opacity linear .1s;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+#text-rotate{       
+    background-color: #5cd5eb;
+    margin-left: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+
 #Line-Width-mark{
     padding:10px 15px;
     background-color:blueviolet;
