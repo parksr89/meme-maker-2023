@@ -80,6 +80,7 @@ function strokeStyleAndfillStyle(event){
 
 function onColorChange(event){
     strokeStyleAndfillStyle(event.target.value);
+    elseColor.style.backgroundColor = event.target.value;
 }
 
 function onColorClick(event){
