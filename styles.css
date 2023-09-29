@@ -60,7 +60,7 @@ input#color {
     display: none;
 }
 
-#text-preview,
+#text-preview-display,
 button,
 .btns label {
     all:unset;
@@ -75,18 +75,22 @@ button,
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-#text-preview{     
+#text-preview-display {     
     background-color:white; 
     height: 200px;
+    width: 225px;   
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: black;
+    overflow:hidden;
 }
 
 #text-rotate-label{
     all:unset;
     padding:10px 0px;
+   
     text-align: center;
     background-color:blueviolet;
     color:white;
