@@ -15,9 +15,13 @@ const lineWidthBtnThin =document.querySelector("#line-width-thinbtn");
 const lineWidthBtnBold =document.querySelector("#line-width-boldbtn");
 const textModeBtn = document.querySelector("#text-mode-btn");
 const fontSizeInput = document.querySelector("#font-size-input");
+const textRotate = document.getElementById("text-rotate");
+
 
 const CANVAS_WIDTH = 800;
 const CANVAS_HEIGHT = 800;
+
+
 
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
@@ -29,6 +33,8 @@ let isTextTransfroming =false;
 let isPainting = false;
 let isFilling = false;
 let fontSize = 100; 
+let Angle =360;
+
 
 function onMove(event) {
     if (isPainting){
@@ -140,19 +146,29 @@ function textStamp(event){
     if(text !==""){
         ctx.save();
         ctx.lineWidth = 1; 
-             
+
         ctx.font = `${fontSize}px serif`;  
-        
+
+        /* rotate */
+        ctx.translate(event.offsetX, event.offsetY);
+        ctx.rotate(-(Angle/180)*Math.PI);
+        ctx.translate(-event.offsetX, -event.offsetY);
+
         if (isTextTransfroming){
             ctx.fillText(text,event.offsetX,event.offsetY);
         }else{        
             ctx.strokeText(text,event.offsetX,event.offsetY);
         }
-        console.log(event.offsetX,event.offsetY);
         ctx.restore();
     }
 }
 
+function onTextRotate(event){
+
+    if (Angle !== event.target.value){
+        Angle = event.target.value;
+    }
+}
 
 function ontextModeClick(){
     
@@ -195,4 +211,8 @@ fileInput.addEventListener("change",onFileChange);
 saveBtn.addEventListener("click", onSaveClick);
 textModeBtn.addEventListener("click", ontextModeClick);
 fontSizeInput.addEventListener("change", fontSizeChange);
+
+textRotate.addEventListener("change", onTextRotate);
+
+
 

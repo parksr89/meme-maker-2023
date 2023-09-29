@@ -22,6 +22,10 @@
     </div>
     <canvas></canvas>
     <div class="btns">
+        <div id="text-preview">Preview</div>
+        <label for="text-rotate" id="text-rotate-label">
+            Rotate <input type="range" id="text-rotate" min="0" max="360">
+        </label>        
         <span>
             <input type="text" id="font-size-input" placeholder="size" maxlength="3"/>
             <button id ="text-mode-btn">Stroke Text</button>
@@ -39,8 +43,7 @@
         <button id ="desstroy-btn">💣 Desstroy</button>
         <button id="eraser-btn">❌ Erase</button>
         <label for ="file">💅🏻 Add Photo</label>
-        <input type="file" accept="image/*" id="file" />
-        
+        <input type="file" accept="image/*" id="file" />        
         <button id="save">🖼 Save iamge</button>
     </div>
     <script src="app.js"></script>
