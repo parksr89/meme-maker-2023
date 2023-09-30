@@ -175,12 +175,6 @@ function preview(event , degree){
     textPreview.style.font=`${fontSize}px serif`;  
     textPreview.style.color= elseColor.style.backgroundColor;
 
-    if (isTextTransfroming === false){
-        textPreview.classList.add("text-stroke");        
-    }else{
-        textPreview.classList.remove("text-stroke");
-    }
-    
 }
 
 
