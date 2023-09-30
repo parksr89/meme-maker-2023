@@ -113,12 +113,6 @@ button,
     border-radius: 5px;    
 }
 
-.text-stroke {   
-    background-color: transparent; 
-    color: transparent;      
-    -webkit-text-stroke: 1px black; 
-    
-}
 
 #Line-Width-mark{
     padding:10px 15px;
