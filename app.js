@@ -32,11 +32,12 @@ let isFilling = false;
 let fontSize = 100; 
 let Angle =360;
 
+let FillOrStroke = true;
 
 function onMove(event) {
     if (isPainting){
         ctx.lineTo(event.offsetX, event.offsetY);
-        ctx.stroke();
+        ctx.stroke();                   
         return;
     }
     ctx.beginPath();
@@ -97,11 +98,11 @@ function onModeClick(){
 
     if(isFilling){
         isFilling = false;
-        modeBtn.innerText ="🩸 Fill";
-    } else{
-        isFilling = true;
+        modeBtn.innerText ="🩸 Fill Canvas";
+    } else {
+        isFilling = true;        
         modeBtn.innerText ="Draw";
-    }
+    } 
 }
 
 function onCanvasFillingClick(){
